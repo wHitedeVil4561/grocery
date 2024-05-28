@@ -1,0 +1,22 @@
+{
+  "name": "grocery",
+  "version": "1.0.0",
+  "description": "Grocery",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wHitedeVil4561/grocery.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wHitedeVil4561/grocery/issues"
+  },
+  "homepage": "https://github.com/wHitedeVil4561/grocery#readme",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
