@@ -12,7 +12,7 @@ const sequelize = new Sequelize(
   {
     dialect: "postgres",
     host: "localhost",
-    logging: false,
+    logging: console.log,
   }
 );
 
@@ -48,7 +48,7 @@ async function establistConnection(){
         console.error(err);
       });
     sequelize
-      .sync({ force: false })
+      .sync({ force: false,alter:false })
       .then(() => {
         console.log("Models are synced with the database");
       })
@@ -61,5 +61,5 @@ async function establistConnection(){
     console.err(err)
   }
 }
-establistConnection()
+await establistConnection();
 export default db;

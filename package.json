@@ -18,10 +18,12 @@
   },
   "homepage": "https://github.com/wHitedeVil4561/grocery#readme",
   "dependencies": {
+    "@apollo/server": "^4.10.4",
     "body-parser": "^1.20.2",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
+    "graphql": "^16.8.1",
     "http-status": "^1.7.4",
     "pg": "^8.11.5",
     "pg-hstore": "^2.3.4",
