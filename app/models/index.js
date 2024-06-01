@@ -12,10 +12,12 @@ const sequelize = new Sequelize(
   {
     dialect: "postgres",
     host: "localhost",
+    define:{
+      underscored:true
+    },
     logging: console.log,
   }
 );
-
 const basename = path.basename(__filename);
 const db = {};
 const modelFns = []
@@ -48,7 +50,7 @@ async function establistConnection(){
         console.error(err);
       });
     sequelize
-      .sync({ force: false,alter:false })
+      .sync({ force: true,alter:true })
       .then(() => {
         console.log("Models are synced with the database");
       })
@@ -58,7 +60,7 @@ async function establistConnection(){
 
     db.sequelize = sequelize; 
   }catch(err){
-    console.err(err)
+    console.error(err)
   }
 }
 await establistConnection();
