@@ -1,7 +1,7 @@
 import { Sequelize } from "sequelize";
 
 export default (sequelize, DataTypes) => {
-  const company_contact_person = sequelize.define("company_contact_person", {
+  const companyContactPerson = sequelize.define("CompanyContactPerson", {
     id: {
       type: Sequelize.UUID,
       defaultValue: Sequelize.UUIDV4,
@@ -31,10 +31,10 @@ export default (sequelize, DataTypes) => {
     timestamps:true,
     paranoid:true,
   });
-  company_contact_person.association = (db) =>{
-    company_contact_person.belongsTo(db.company,{
+  companyContactPerson.association = (db) =>{
+    companyContactPerson.belongsTo(db.Company,{
         allowNull:false
     });
   }
-  return company_contact_person;
+  return companyContactPerson;
 };

@@ -1,21 +1,21 @@
 import { Sequelize } from "sequelize";
 
 export default (sequelize, DataTypes) => {
-  const session = sequelize.define("session", {
+  const session = sequelize.define("Session", {
     id: {
       type: Sequelize.UUID,
       defaultValue: Sequelize.UUIDV4,
       primaryKey: true,
     },
-    device_id: {
+    deviceId: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    device_type: {
+    deviceType: {
       type: DataTypes.STRING,
       allowNull:false
     },
-    device_token:{
+    deviceToken:{
         type: DataTypes.STRING,
         allowNull:false
     },
@@ -28,7 +28,7 @@ export default (sequelize, DataTypes) => {
     paranoid:true,
   });
   session.association = (db)=>{
-    session.belongsTo(db.employee);
+    session.belongsTo(db.Employee);
   }
   return session;
 };

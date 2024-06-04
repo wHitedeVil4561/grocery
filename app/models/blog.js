@@ -3,7 +3,7 @@ import  { APP_CONSTANT }  from "../constant/app.constant.js";
 
 export default (sequelize, DataTypes) => {
   const blog = sequelize.define(
-    "blog",
+    "Blog",
     {
       id: {
         type: Sequelize.UUID,
@@ -22,31 +22,31 @@ export default (sequelize, DataTypes) => {
         type: DataTypes.INTEGER,
         allowNull: false,
       },
-      proposed_by: {
+      proposedBy: {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      proposed_date: {
+      proposedDate: {
         type: DataTypes.DATE,
         allowNull: false,
       },
-      approved_by: {
+      approvedBy: {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      approved_date: {
+      approvedDate: {
         type: DataTypes.DATE,
         allowNull: false,
       },
-      cover_img: {
+      coverImg: {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      content_media_type: {
+      contentMediaType: {
         type: DataTypes.INTEGER,
         defaultValue: APP_CONSTANT.MEDIA.IMG
       },
-      content_media_url: {
+      contentMediaUrl: {
         type: DataTypes.STRING,
         allowNull: false,
       },
@@ -54,7 +54,7 @@ export default (sequelize, DataTypes) => {
         type: DataTypes.TEXT,
         allowNull:false
       },
-      key_takeaway: {
+      keyTakeaway: {
         type: DataTypes.ARRAY(DataTypes.STRING),
         allowNull:false
       }

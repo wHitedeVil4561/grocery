@@ -1,8 +1,8 @@
 import { Sequelize } from "sequelize";
 
 export default (sequelize, DataTypes) => {
-  const blog_category = sequelize.define(
-    "blog_category",
+  const blogCategory = sequelize.define(
+    "BlogCategory",
     {
       id: {
         type: Sequelize.UUID,
@@ -23,5 +23,5 @@ export default (sequelize, DataTypes) => {
       paranoid: true,
     }
   );
-  return blog_category;
+  return blogCategory;
 };

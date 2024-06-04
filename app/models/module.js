@@ -1,7 +1,7 @@
 import { Sequelize } from "sequelize";
 
 export default (sequelize, DataTypes) => {
-  const module = sequelize.define("module", {
+  const module = sequelize.define("Module", {
     id: {
       type: Sequelize.UUID,
       defaultValue: Sequelize.UUIDV4,

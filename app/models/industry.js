@@ -1,7 +1,7 @@
 import { Sequelize } from "sequelize";
 
 export default (sequelize, DataTypes) => {
-  const industry = sequelize.define("industry", {
+  const industry = sequelize.define("Industry", {
     id: {
       type: Sequelize.UUID,
       defaultValue: Sequelize.UUIDV4,
@@ -13,7 +13,7 @@ export default (sequelize, DataTypes) => {
     },
   });
   industry.association = (db)=>{
-    industry.hasMany(db.company);
+    industry.hasMany(db.Company);
   }
   return industry;
 };

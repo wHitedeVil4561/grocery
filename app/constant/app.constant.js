@@ -1,4 +1,8 @@
 export const APP_CONSTANT = {
+    ROLE_TYPE:{
+        ADMIN:1,
+        EMPLOYEE:2
+    },
     ONBOARD_STATUS:{
         PENDING:-1,
         ONBOARDED:1

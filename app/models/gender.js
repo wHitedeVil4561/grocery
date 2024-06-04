@@ -1,7 +1,7 @@
 import { Sequelize } from "sequelize";
 
 export default (sequelize, DataTypes) => {
-  const gender = sequelize.define("gender", {
+  const gender = sequelize.define("Gender", {
     id: {
       type: Sequelize.UUID,
       defaultValue: Sequelize.UUIDV4,
@@ -14,7 +14,7 @@ export default (sequelize, DataTypes) => {
     },
   });
   gender.association = (db)=>{
-    gender.hasMany(db.employee);
+    gender.hasMany(db.Employee);
   }
   return gender;
 };

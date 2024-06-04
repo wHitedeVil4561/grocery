@@ -3,17 +3,15 @@ import { APP_CONSTANT } from "../constant/app.constant.js";
 
 export default (sequelize, DataTypes) => {
   const employee = sequelize.define(
-    "employee",
+    "Employee",
     {
       id: {
         type: Sequelize.UUID,
         defaultValue: Sequelize.UUIDV4,
         primaryKey: true,
       },
-      employee_id: {
+      employeeId: {
         type: DataTypes.STRING,
-        allowNull: false,
-        unique: true,
       },
       name: {
         type:DataTypes.STRING,
@@ -26,7 +24,7 @@ export default (sequelize, DataTypes) => {
       phone: {
         type:DataTypes.STRING,
       },
-      country_code: {
+      countryCode: {
         type:DataTypes.STRING,
         defaultValue:'+91'
       },
@@ -36,22 +34,26 @@ export default (sequelize, DataTypes) => {
       password: {
         type: DataTypes.STRING,
       },
-      onboard_status: {
+      onboardStatus: {
         type: DataTypes.INTEGER,
         defaultValue: APP_CONSTANT.ONBOARD_STATUS.PENDING
       },
-      secondary_email:{
+      secondaryEmail:{
         type: DataTypes.STRING,
       },
-      secondary_phone:{
+      secondaryPhone:{
         type: DataTypes.STRING,
       },
-      secondary_country_code:{
+      secondaryCountryCode:{
         type: DataTypes.STRING,
         defaultValue: '+91'
       },
-      joining_date: {
+      joiningDate: {
         type:DataTypes.DATE,
+      },
+      role:{
+        type:DataTypes.INTEGER,
+        defaultValue:APP_CONSTANT.ROLE_TYPE.EMPLOYEE
       }
     },
     {
@@ -60,11 +62,11 @@ export default (sequelize, DataTypes) => {
     }
   );
   employee.association = (db)=>{
-    employee.hasOne(db.employee_nominee);
-    employee.belongsTo(db.gender);
-    employee.belongsTo(db.city);
-    employee.hasMany(db.session);
-    employee.hasOne(db.otp);
+    employee.hasOne(db.EmployeeNominee);
+    employee.belongsTo(db.Gender);
+    employee.belongsTo(db.City);
+    employee.hasMany(db.Session);
+    employee.hasOne(db.Otp);
     
   }
   return employee;

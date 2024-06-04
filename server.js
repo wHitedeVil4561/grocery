@@ -13,7 +13,9 @@ const app = express();
 const apolloServer = new ApolloServer({
   typeDefs: typeDefs,
   resolvers: resolvers,
-  status400ForVariableCoercionErrors:true
+  status400ForVariableCoercionErrors:true,
+  introspection:true,
+  logger:true,
 });
 apolloServer.start().then(() => {
   app.use(

@@ -1,8 +1,8 @@
 import { Sequelize } from "sequelize";
 
 export default (sequelize, DataTypes) => {
-  const employee_nominee = sequelize.define(
-    "employee_nominee",
+  const employeeNominee = sequelize.define(
+    "EmployeeNominee",
     {
       id: {
         type: Sequelize.UUID,
@@ -27,9 +27,9 @@ export default (sequelize, DataTypes) => {
       paranoid: true,
     }
   );
-  employee_nominee.association = (db)=>{
-    employee_nominee.belongsTo(db.employee);
-    employee_nominee.belongsTo(db.relationship);
+  employeeNominee.association = (db)=>{
+    employeeNominee.belongsTo(db.Employee);
+    employeeNominee.belongsTo(db.Relationship);
   }
-  return employee_nominee;
+  return employeeNominee;
 };

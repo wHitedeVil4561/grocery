@@ -1,7 +1,7 @@
 import { Sequelize } from "sequelize";
 
 export default (sequelize, DataTypes) => {
-  const relationship = sequelize.define("relationship", {
+  const relationship = sequelize.define("Relationship", {
     id: {
       type: Sequelize.UUID,
       defaultValue: Sequelize.UUIDV4,
@@ -14,7 +14,7 @@ export default (sequelize, DataTypes) => {
     },
   });
   relationship.association = (db)=>{
-      relationship.hasMany(db.employee_nominee);
+      relationship.hasMany(db.EmployeeNominee);
   }
   return relationship;
 };

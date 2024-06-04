@@ -1,7 +1,7 @@
 import { Sequelize } from "sequelize";
 
 export default (sequelize, DataTypes) => {
-  const otp = sequelize.define("otp", {
+  const otp = sequelize.define("Otp", {
     id: {
       type: Sequelize.UUID,
       defaultValue: Sequelize.UUIDV4,
@@ -11,11 +11,11 @@ export default (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-    invalid_attempt_count: {
+    invalidAttemptCount: {
       type: DataTypes.INTEGER,
       defaultValue:0
     },
-    attempt_at:{
+    attemptAt:{
         type: DataTypes.DATE,
         allowNull:false
     },
@@ -24,7 +24,7 @@ export default (sequelize, DataTypes) => {
     paranoid:true,
   });
   otp.association = (db)=>{
-    otp.belongsTo(db.employee);
+    otp.belongsTo(db.Employee);
   }
   return otp;
 };

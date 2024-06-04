@@ -16,6 +16,9 @@ const sequelize = new Sequelize(
       underscored:true
     },
     logging: console.log,
+    query:{
+      raw:true
+    }
   }
 );
 const basename = path.basename(__filename);
@@ -50,7 +53,7 @@ async function establistConnection(){
         console.error(err);
       });
     sequelize
-      .sync({ force: true,alter:true })
+      .sync({ force: false,alter:true })
       .then(() => {
         console.log("Models are synced with the database");
       })
